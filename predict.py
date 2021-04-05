@@ -5,7 +5,7 @@ import cv2
 def main(path, path_model):
   img = cv2.imread(path, cv2.IMREAD_COLOR)
   img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-  img = cv2.resize(img, (300, 300))
+  img = cv2.resize(img, (28, 28))
   img_arr = tf.keras.preprocessing.image.img_to_array(img)
   img_arr = np.array([img_arr])
 
@@ -15,4 +15,4 @@ def main(path, path_model):
   print(np.argmax(predictions)) 
 
 if __name__ == '__main__':
-  main('./dataset/test/dog.jpeg', './model')
+  main('./dataset/test/cat.jpeg', './model')
